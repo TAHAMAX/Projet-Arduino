@@ -22,8 +22,11 @@ npm install mic
 
 
 ///////////////////////////////////////////////////////////////
+
 dan votre ficher index.js >>>
+
 ///////////////////////////////////////////////////////////////
+
 var SerialPort = require('serialport');
 // récupérer des données du port
 var port = new SerialPort('/dev/ttyUSB0', 
@@ -43,9 +46,13 @@ say.speak('hi luc');
 say.stop();
 }
 
+
 ///////////////////////////////////////////////////////////////
+
 code arduino
+
 ///////////////////////////////////////////////////////////////
+
 int echo = 11;
 long lecture_echo;
 long cm;
@@ -57,6 +64,7 @@ void setup()
   pinMode(echo, INPUT);
   Serial.begin(9600);
 }
+
 
 void loop()
 {
@@ -71,4 +79,5 @@ void loop()
   }
   delay(10);
 }
+
 ///////////////////////////////////////////////////////////////
