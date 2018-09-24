@@ -1,28 +1,17 @@
-h1
-{
+h1{
 	text-align: center;
-	padding-bottom: 30px;
 }
 
-h2{
-	text-align: center;
-	padding-bottom: 10px;
+.image{
+	width: 400px;
+	height: 350px;
 }
 
-.espace
-{
-	margin-right: 50px;
+.formulaire{
+	flex-direction: column;
+	align-items:  center;
 }
 
-.scales {
-	margin-right: 0px; 
-}
-
-.padding{
-	padding-top: 30px;
-}
-
-.paddingBot
-{
-	padding-bottom: 10px;
+div{
+	display: flex;
 }
