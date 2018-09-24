@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1{
 	text-align: center;
 }
@@ -15,3 +16,8 @@ h1{
 div{
 	display: flex;
 }
+=======
+#div_hide{
+	display: none;
+}
+>>>>>>> 92ea2122b317b721be85b8bd8a816858c1d529a0
