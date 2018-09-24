@@ -1,28 +1,3 @@
-h1
-{
-	text-align: center;
-	padding-bottom: 30px;
-}
-
-h2{
-	text-align: center;
-	padding-bottom: 10px;
-}
-
-.espace
-{
-	margin-right: 50px;
-}
-
-.scales {
-	margin-right: 0px; 
-}
-
-.padding{
-	padding-top: 30px;
-}
-
-.paddingBot
-{
-	padding-bottom: 10px;
+#div_hide{
+	display: none;
 }
