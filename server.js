@@ -1,17 +1,31 @@
+// const express = require('express');
+// const app = express();
 
-var SerialPort = require('serialport');
-var mysql = require('mysql');
+
+
+
 var express = require('express');
 var app = express();
+var SerialPort = require('serialport');
+var mysql = require('mysql');
 var bp = require('body-parser');
+var portHttp = 4400;
 
-
-app.use('/', express.static(__dirname ));
+const serv = require('http');
+const http = serv.Server(app);
+var io = require('socket.io')(http);
+app.use(express.static(__dirname ));
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
 
 /* Connection to the database  */
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index1.html');
+});
+
+
 
 
 
@@ -19,7 +33,7 @@ var db = mysql.createConnection({
   host: "localhost",
   user: "annie",
   password: "12345678",
-  database: "asso"
+  database: "arduina"
 });
 
 db.connect(function(err) {
@@ -41,8 +55,14 @@ var coucou = "1 record inserted";
     //     if (err) throw err;
     //     res.send(coucou);
     //   })
-  
   });
+
+  // app.get("/question",function(req,res)
+  // {
+  //   var question = 'SELECT * FROM questions';
+  //   db.query(question);
+  // });
+
   // var sql = "INSERT INTO response (response) VALUES ("+ response +")";
   // db.query(sql, function (err, result) {
   //   if (err) throw err;
@@ -81,27 +101,34 @@ port.on('data', dire_bonjour);
 
 
 
-    function dire_bonjour( data )
-    {
-      
-      console.log('Coucou tout le monde');
-    
-      // require('app.js');
-      // recognition.start();
-      app.post("/signal",function(req,res)
-      {
-        var signal =true;
-        // console.log( msg);
-        // var say = require('say');
-        // say.speak('hi luc');
-        // say.stop();
-      });
-    };
 
 
 
 
-app.listen(4400, function() 
+function dire_bonjour( data )
 {
-  console.log('listening on port 4400!');
+  io.on('connection', function (socket) {
+    socket.broadcast.emit('user connected');
+  });
+
+  console.log('Coucou tout le monde');
+
+  // require('app.js');
+  // recognition.start();
+  // app.post("/signal",function(req,res)
+  // {
+  //   var signal =true;
+  //   // console.log( msg);
+  //   // var say = require('say');
+  //   // say.speak('hi luc');
+  //   // say.stop();
+  // });
+};
+
+
+
+
+http.listen(portHttp, function() 
+{
+  console.log('listening on port ' + portHttp);
 });
