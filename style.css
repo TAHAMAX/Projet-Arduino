@@ -24,11 +24,20 @@ div{
 
 
 body{
-	
+	padding-top: 40px;
 }
 
 
-.form-inline{
-	margin-right: 100px;
+.form-inline {
+	margin-right: 280px;
+}
+
+
+.btn-danger{
+	margin-left: 100px;
+}
+
+h4{
+	margin-right: 60px;
 }
 
