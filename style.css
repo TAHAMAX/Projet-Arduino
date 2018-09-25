@@ -1,46 +1,69 @@
 
-h1{
+h1
+{
 	text-align: center;
 }
 
-.image{
+
+
+.image
+{
 	width: 400px;
 	height: 350px;
 }
 
-.formulaire{
+
+
+.formulaire
+{
 	flex-direction: column;
 	align-items:  center;
 }
 
-div{
+
+
+div
+{
 	display: flex;
 }
 
 
-#div_hide{
+
+
+#div_hide
+{
 	display: none;
 }
 
 
-body{
+
+body
+{
 	padding-top: 40px;
 }
 
 
-.form-inline {
+
+.form-inline 
+{
 	margin-right: 280px;
 }
 
 
-.btn-danger{
+
+.btn-danger
+{
 	margin-left: 100px;
 }
 
-h4{
+
+h4
+{
 	margin-right: 60px;
 }
 
-.speech_arrivée{
+
+.speech_arrivée
+{
 	text-align: center;
 }
